@@ -1,0 +1,28 @@
+repos:
+    -   repo: https://github.com/ambv/black
+        rev: stable
+        hooks:
+        - id: black
+          # language_version: python3.6
+          ignore: W503,E221,W504
+    -   repo: https://github.com/asottile/reorder_python_imports
+        rev: v1.3.4
+        hooks:
+        - id: reorder-python-imports
+    -   repo: https://github.com/pre-commit/pre-commit-hooks
+        rev: v1.2.3
+        hooks:
+        - id: check-added-large-files
+          args: ['--maxkb=1000']
+        - id: check-symlinks
+        - id: mixed-line-ending
+        - id: trailing-whitespace
+        - id: check-ast
+        - id: check-json
+        - id: end-of-file-fixer
+        - id: check-merge-conflict
+        # - id: detect-aws-credentials
+        - id: flake8
+          args: [--max-line-length=120,--ignore=E203 & W503 & E221]
+
+
